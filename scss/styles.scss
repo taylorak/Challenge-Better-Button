@@ -1,0 +1,41 @@
+$blue: #0000FF;
+$fontSize: 11px;
+$padding: 10px;
+
+@mixin border-radius($length) {
+  border-radius: $length;
+  -moz-border-radius: $length;
+  -webkit-border-radius: $length;
+}
+
+#buttonDiv {
+  background-color: salmon;
+  height: 200px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#betterButton {
+  flex: 0 0 auto;
+
+  background-color: $blue;
+  color: white;
+  font-size: $fontSize;
+  transition: all 0.5s ease;
+  border: 1px solid $blue;
+  padding: $padding;
+  box-shadow: 2px 2px 5px #000000;
+  @include border-radius(10px);
+
+
+  &:hover {
+    padding: $padding + 5;
+    font-size: $fontSize + 5;
+    background-color: lighten($blue, 20%);
+    border: 1px solid lighten($blue, 20%);
+  }
+
+}
